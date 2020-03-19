@@ -9,3 +9,43 @@ body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location form {
+  border: 3px #577a70 solid;
+  border-radius: 8px;
+  padding: 2em;
+  width: auto;
+}
+
+.location form input,
+.location form button {
+  font-size: 1em;
+  font-size: 18px;
+  margin: 10px;
+  padding: 10px;
+}
+.form-label {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  border-radius: 8px;
+  border: none;
+}
+input:focus,
+button:focus {
+  outline: none;
+}
+
+button {
+  border-radius: 8px;
+  background-color: #577a70;
+  border: none;
+  color: white;
+}

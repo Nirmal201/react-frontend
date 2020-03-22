@@ -14,6 +14,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .location form {
@@ -48,4 +49,10 @@ button {
   background-color: #577a70;
   border: none;
   color: white;
+}
+
+.search {
+  background-color: rgb(194, 149, 37);
+  padding: 2em;
+  width: 50%;
 }

@@ -4,48 +4,53 @@ import Results from "./Results";
 import useDropDown from "./useDropDown";
 
 const SearchParams = () => {
-  const [location, setLocation] = useState("Seattle, WA");
-  const [breeds, setBreeds] = useState([]);
-  const [animal, AnimalDropDown] = useDropDown("Animal", "dog", ANIMALS);
-  const [breed, BreedDropDown, setBreed] = useDropDown("Breed", "", breeds);
+  const [location, updateLocation] = useState("Seattle, WA");
+  const [breeds, updateBreeds] = useState([]);
   const [pets, setPets] = useState([]);
+  const [animal, AnimalDropdown] = useDropDown("Animal", "dog", ANIMALS);
+  const [breed, BreedDropdown, updateBreed] = useDropDown("Breed", "", breeds);
 
   async function requestPets() {
-    const { animals } = await pet.animals({ location, breed, type: animal });
-    setPets[animals || []];
+    const { animals } = await pet.animals({
+      location,
+      breed,
+      type: animal
+    });
+
+    console.log("animals", animals);
+
+    setPets(animals || []);
   }
+
   useEffect(() => {
-    setBreeds([]);
-    setBreed("");
-    pet.breeds(animal).then(({ breeds: apiBreed }) => {
-      const breedStrings = apiBreed.map(({ name }) => name);
-      setBreeds(breedStrings);
+    updateBreeds([]);
+    updateBreed("");
+
+    pet.breeds(animal).then(({ breeds }) => {
+      const breedStrings = breeds.map(({ name }) => name);
+      updateBreeds(breedStrings);
     }, console.error);
-  }, [animal, setBreed, setBreeds]);
+  }, [animal]);
 
   return (
-    <div className="location">
-      <h1>{location}</h1>
+    <div className="search-params">
       <form
         onSubmit={e => {
           e.preventDefault();
           requestPets();
         }}
       >
-        <label htmlFor="location" className="form-label">
+        <label htmlFor="location">
           Location
           <input
-            type="text"
             id="location"
             value={location}
             placeholder="Location"
-            onChange={e => {
-              setLocation(e.target.value);
-            }}
+            onChange={e => updateLocation(e.target.value)}
           />
         </label>
-        <AnimalDropDown />
-        <BreedDropDown></BreedDropDown>
+        <AnimalDropdown />
+        <BreedDropdown />
         <button>Submit</button>
       </form>
       <Results pets={pets} />

@@ -1,6 +1,6 @@
 * {
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
+  color: #333;
 }
 
 body {
@@ -10,49 +10,187 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.location {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.search-params {
+  width: 1100px;
+  margin: 0 auto;
 }
 
-.location form {
-  border: 3px #577a70 solid;
-  border-radius: 8px;
-  padding: 2em;
-  width: auto;
-}
-
-.location form input,
-.location form button {
-  font-size: 1em;
-  font-size: 18px;
-  margin: 10px;
-  padding: 10px;
-}
-.form-label {
-  display: flex;
-  flex-direction: column;
-}
-input {
-  border-radius: 8px;
-  border: none;
-}
-input:focus,
-button:focus {
-  outline: none;
-}
-
-button {
-  border-radius: 8px;
-  background-color: #577a70;
-  border: none;
-  color: white;
+.search-params form {
+  background-color: #d9c148;
+  width: 360px;
+  margin: 0px 25px 0px 0px;
+  padding: 35px 15px 15px 15px;
+  border-radius: 5px;
+  float: left;
 }
 
 .search {
-  background-color: rgb(194, 149, 37);
-  padding: 2em;
+  background-color: #d9c148;
+  width: 715px;
+  padding: 15px;
+  border-radius: 9px;
+  float: left;
+  margin-bottom: 25px;
+}
+
+.details {
+  width: 1100px;
+  margin: 0 auto;
+  background-color: #d9c148;
+  padding: 15px;
+  border-radius: 9px;
+  margin-bottom: 25px;
+}
+
+.pet {
+  width: 100%;
+  height: 130px;
+  display: block;
+  overflow: hidden;
+  margin: 25px 0;
+  border-bottom: #bf9b2f 1px solid;
+}
+
+.pet img {
+  width: 100px;
+  min-height: 100px;
+}
+
+.info {
+  float: left;
+  width: 80%;
+  height: 100px;
+  padding-top: 10px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.image-container {
+  clip-path: circle(50% at 50% 50%);
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 0px 20px 0px 10px;
+}
+
+.pet h1 {
+  white-space: nowrap;
+  font-weight: normal;
+  font-size: 30px;
+  color: #bf3334;
+  width: 95%;
+  overflow: hidden;
+  margin: 0;
+  text-overflow: ellipsis;
+}
+
+header > a,
+#root > div > h1 {
+  display: inline-block;
+  background-image: url(http://static.frontendmasters.com/resources/2019-05-02-complete-intro-react-v5/image-logo.png);
+  width: 279px;
+  height: 76px;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.pet h2 {
+  white-space: nowrap;
+  font-weight: normal;
+  font-size: 20px;
+  margin: 0;
+  text-overflow: ellipsis;
+}
+
+header a {
+  color: #bf3334;
+  font-size: 3px;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding-bottom: 10px;
+}
+
+header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0px 0px 0px;
+}
+
+.details p {
+  line-height: 1.5;
+  padding: 0px 15px;
+}
+
+.details h1 {
+  text-align: center;
+  color: #bf3334;
+  font-size: 60px;
+  margin: 5px 0px;
+}
+
+.details h2 {
+  text-align: center;
+  margin: 5px 0px 20px 0px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 400px;
+  margin-top: 8px;
+}
+
+.carousel > img {
+  max-width: 45%;
+  max-height: 400px;
+}
+
+.carousel-smaller {
   width: 50%;
+}
+
+.carousel-smaller > img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 15px;
+  cursor: pointer;
+  border: 2px solid #333;
+}
+
+.carousel-smaller > img.active {
+  border-color: #ad343e;
+  opacity: 0.6;
+}
+search-params label {
+  display: block;
+  width: 60px;
+}
+
+.search-params input,
+.search-params select {
+  margin-bottom: 30px;
+  font-size: 18px;
+  height: 30px;
+  width: 325px;
+}
+
+.search-params button,
+#modal button,
+.details button {
+  background-color: #ad343e;
+  padding: 5px 25px;
+  color: white;
+  font-size: 18px;
+  border: #333 1px solid;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
 }

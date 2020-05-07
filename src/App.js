@@ -10,7 +10,7 @@ const App = () => {
   return (
     <React.StrictMode>
       <ThemeContext.Provider value={ThemeHook}>
-        <div>
+        <div className="AppHead">
           <header>
             <Link to="/">Adopt Me!</Link>
           </header>
